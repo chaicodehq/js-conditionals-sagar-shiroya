@@ -33,19 +33,19 @@
 export function calculateCoffeePrice(size, type, extras = {}) {
   var price = 0.00;
 
-  if(size === 'small') price += 3.00;
-  else if(size === 'medium') price += 4.00;
-  else if(size === 'large') price += 5.00;
+  if (size === 'small') price += 3.00;
+  else if (size === 'medium') price += 4.00;
+  else if (size === 'large') price += 5.00;
   else return -1;
 
-  if(type === 'latte') price += 1.00;
-  else if(type === 'cappuccino') price += 1.50;
-  else if(type === 'mocha') price += 2.00;
-  else if(type === 'regular') price += 0.00;
+  if (type === 'latte') price += 1.00;
+  else if (type === 'cappuccino') price += 1.50;
+  else if (type === 'mocha') price += 2.00;
+  else if (type === 'regular') price += 0.00;
   else return -1;
 
-  if(extras.whippedCream) price += 0.50;
-  if(extras.extraShot) price += 0.75;
+  if (extras.whippedCream) price += 0.50;
+  if (extras.extraShot) price += 0.75;
 
   return price;
 }

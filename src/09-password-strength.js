@@ -27,16 +27,16 @@
  */
 export function checkPasswordStrength(password) {
   var totalCriteriaMet = 0;
-  if(password === '' || typeof password !== 'string') return 'weak';
+  if (password === '' || typeof password !== 'string') return 'weak';
 
-  if(password.length >= 8) totalCriteriaMet += 1;
-  if(/[A-Z]/.test(password)) totalCriteriaMet += 1;
-  if(/[a-z]/.test(password)) totalCriteriaMet += 1;
-  if(/[0-9]/.test(password)) totalCriteriaMet += 1;
-  if(/[!@#$%^&*()_\+\-=\[\]{}|;:,.<>?]/.test(password)) totalCriteriaMet += 1;
+  if (password.length >= 8) totalCriteriaMet += 1;
+  if (/[A-Z]/.test(password)) totalCriteriaMet += 1;
+  if (/[a-z]/.test(password)) totalCriteriaMet += 1;
+  if (/[0-9]/.test(password)) totalCriteriaMet += 1;
+  if (/[!@#$%^&*()_\+\-=\[\]{}|;:,.<>?]/.test(password)) totalCriteriaMet += 1;
 
-  if(totalCriteriaMet <= 1) return 'weak';
-  else if(totalCriteriaMet <= 3) return 'medium';
-  else if(totalCriteriaMet <= 4) return 'strong';
+  if (totalCriteriaMet <= 1) return 'weak';
+  else if (totalCriteriaMet <= 3) return 'medium';
+  else if (totalCriteriaMet <= 4) return 'strong';
   else return 'very strong';
 }

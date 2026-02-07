@@ -30,6 +30,26 @@
  * @param {number} temperature - Current temperature in Celsius
  * @returns {{ season: string, activity: string } | null}
  */
-export function getSeasonActivity(month, temperature) {
-  // Your code here
+export function getSeasonActivity(month, temp) {
+  if( month < 1 || month > 12) return null;
+  var season = '';
+  var activity = '';
+  if(month >=3 && month <=5) {
+    season = 'Spring';
+    if(temp <= 20) activity =  'museum visit';
+    else activity = 'hiking';
+  } else if(month >=6 && month <=8) {
+    season = 'Summer';
+    if(temp <= 35) activity = 'cycling';
+    else activity = 'swimming';
+  } else if(month >=9 && month <=11) {
+    season = 'Autumn';
+    if(temp <= 15) activity = 'reading at a cafe';
+    else activity = 'nature walk';
+  } else {
+    season = 'Winter';
+    if(temp < 0) activity = 'skiing';
+    else activity = 'ice skating';
+  }
+  return {season: season, activity:activity};
 }
